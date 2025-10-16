@@ -1,22 +1,29 @@
-let x =0;
-let y =0;
+let rectW = 50;
+let rectH = 400;
 
-function setup()
+function setup() 
 {
-    createCanvas(400,400)
-
+  createCanvas(400, 400);
 }
-function draw()
-{    
-    for(let i =0; i < 8; i++)
+
+function draw() 
+{
+  background(220);
+
+  let x = 0;
+  for (let i = 0; i < 8; i++) 
+  {
+    if (mouseIsPressed &&mouseX >= x && mouseX <= x + rectW &&mouseY >= 0 && mouseY <= rectH) 
     {
-        if (mouseX >= x && mouseX <= (x+50))
-        {
-            fill(0,0,255);
-        }
-        rect(x,y,50,400)
-        x += 50;
-        
+      fill(0,0,255)
+    } 
+    else 
+    {
+      fill(255);
     }
-}
 
+    rect(x, 0, rectW, rectH);
+    x += rectW;
+
+  }
+}
